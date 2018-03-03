@@ -8,7 +8,7 @@ class Movie extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container selected-movie-container">
         <h1>Single Movie</h1>
         <ActiveTrailer movieId={this.props.match.params.id}/>
         <ActiveMovie movieId={this.props.match.params.id}/>

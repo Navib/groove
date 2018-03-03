@@ -21,21 +21,25 @@ class ActiveTrailer extends Component {
           return <div>image</div>
       }
       else {
-      const poster = ((this.props.selectedMovie.backdrop_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/w185/${this.props.selectedMovie.backdrop_path}`);
+      const poster = ((this.props.selectedMovie.backdrop_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/original/${this.props.selectedMovie.backdrop_path}`);
         return (
-          <img src={poster} />
+          <div className="col-md-12">
+            <img src={poster} className="single-movie-poster"/>
+          </div>
         )
       }
     }
     console.log("render Trailer: ", this.props);
     return (
-      <div>
+      <div className="col-md-12 embed-responsive embed-responsive-16by9">
         <iframe
           width="560"
           height="315"
           src={`https://www.youtube.com/embed/${this.props.selectedTrailer.results[0].key}`}
           frameBorder="0"
-          allowFullScreen></iframe>
+          allowFullScreen
+          className="single-movie-iframe embed-responsive-item"
+          ></iframe>
       </div>
     )
   }
