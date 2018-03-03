@@ -6,24 +6,24 @@ import { activeMovie } from '../actions/index';
 class ActiveMovie extends Component {
   constructor(props) {
     super(props);
-    console.log("ActiveMovie Container: ",this.props);
   }
   componentWillMount() {
     this.props.activeMovie(this.props.movieId)
   }
 
   render() {
-    if(!this.props.activeMovie[0]) {
-      return <div>Select a book to get started</div>;
+    if(!this.props.selectedMovie) {
+      return <div>...Loading</div>;
     }
+    //console.log("render: ", this.props);
     return (
-      <div>got it</div>
+      <div>title: {this.props.selectedMovie.title}</div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  activeMovie: state.activeMovie,
+  selectedMovie: state.activeMovie[0],
 })
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ activeMovie }, dispatch);

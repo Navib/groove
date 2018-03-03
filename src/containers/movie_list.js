@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class MovieList extends Component {
   constructor(props) {
     super(props)
-    console.log("movieList: ", this.props);
+    // console.log("movieList: ", this.props);
   }
   renderMovie(movieData){
     // console.log("moviesdata: ",movieData);
