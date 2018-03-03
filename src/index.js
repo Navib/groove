@@ -8,8 +8,8 @@ import promise from 'redux-promise';
 
 import reducers from './reducers';
 import './../scss/main.scss';
-import Header from './components/header';
-import Biography from './components/biography';
+import Home from './components/home';
+import Movie from './components/movie';
 import Contact from './components/contact';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -21,13 +21,13 @@ ReactDOM.render(
       <div>
         <nav>
           <Link className="btn btn-danger" to="/">Home</Link>
-          <Link className="btn btn-danger" to="/movie/:id">Bio</Link>
+          <Link className="btn btn-danger" to="/movie/:id">Movie</Link>
           <Link className="btn btn-danger" to="/contact">Contact</Link>
         </nav>
         <Switch>
           <Route path="/contact" component={Contact} />
-          <Route path="/movie/:id" component={Biography} />
-          <Route path="/" component={Header} />
+          <Route path="/movie/:id" component={Movie} />
+          <Route path="/" component={Home} />
         </Switch>
     </div>
     </BrowserRouter>

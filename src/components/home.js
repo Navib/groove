@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import SearchBar from './../containers/search_bar';
 import MovieList from './../containers/movie_list';
 
-class Header extends Component {
+class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Header!</h1>
+        <h1>Home!</h1>
         <SearchBar />
         <MovieList />
       </div>
@@ -14,4 +14,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Home;
