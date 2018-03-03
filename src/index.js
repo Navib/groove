@@ -7,7 +7,7 @@ import promise from 'redux-promise';
 
 
 import reducers from './reducers';
-import './../scss/header.scss';
+import './../scss/main.scss';
 import Header from './components/header';
 import Biography from './components/biography';
 import Contact from './components/contact';
@@ -21,12 +21,12 @@ ReactDOM.render(
       <div>
         <nav>
           <Link className="btn btn-danger" to="/">Home</Link>
-          <Link className="btn btn-danger" to="/biography">Bio</Link>
+          <Link className="btn btn-danger" to="/movie/:id">Bio</Link>
           <Link className="btn btn-danger" to="/contact">Contact</Link>
         </nav>
         <Switch>
           <Route path="/contact" component={Contact} />
-          <Route path="/biography" component={Biography} />
+          <Route path="/movie/:id" component={Biography} />
           <Route path="/" component={Header} />
         </Switch>
     </div>

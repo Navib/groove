@@ -1,0 +1,26 @@
+/*
+ * Movie List Style
+*/
+.movie-container {
+  margin-top: 2em;
+
+  .movie-row {
+    .movie-item {
+      height: 340px;
+
+      .movie-title {
+        font-size: 13px;
+      }
+
+      .movie-poster {
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.movie-container > .row > .col-md-3:nth-child(4n+1) {
+  clear: both;
+}

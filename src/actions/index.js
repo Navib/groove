@@ -6,20 +6,16 @@ const ROOT_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&l
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 
 export function fetchMovies(movie) {
-  console.log("movie: ", movie);
   const url = `${ROOT_URL}&query=${movie}`;
   const request =  axios.get(url)
                     .then(response => {
-                        console.log(response);
+                        //console.log(response);
                         return response;
                     })
                     .catch( error => {
-                      console.log(error);
+                      //console.log(error);
                       return error;
                     });
-
-
-console.log("request: ", request);
 
   return {
     type: FETCH_MOVIES,
