@@ -12,34 +12,34 @@ class ActiveTrailer extends Component {
   }
   render() {
     if(!this.props.selectedTrailer) {
-      return <div>...Loading</div>;
+      return <div className="col-md-8">...Loading</div>;
     }
     else if(this.props.selectedTrailer.results.length === 0) {
-      console.log("return: ", this.props.selectedMovie);
 
       if(!this.props.selectedMovie) {
-          return <div>image</div>
+          return <div className="col-md-8">image</div>
       }
       else {
       const poster = ((this.props.selectedMovie.backdrop_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/original/${this.props.selectedMovie.backdrop_path}`);
         return (
-          <div className="col-md-12">
+          <div className="col-md-8">
             <img src={poster} className="single-movie-poster"/>
           </div>
         )
       }
     }
-    console.log("render Trailer: ", this.props);
+    //console.log("render Trailer: ", this.props);
     return (
-      <div className="col-md-12 embed-responsive embed-responsive-16by9">
+      <div className="col-md-8">
+
+        <div className="embed-responsive embed-responsive-16by9">
         <iframe
-          width="560"
-          height="315"
           src={`https://www.youtube.com/embed/${this.props.selectedTrailer.results[0].key}`}
           frameBorder="0"
           allowFullScreen
           className="single-movie-iframe embed-responsive-item"
           ></iframe>
+        </div>
       </div>
     )
   }
