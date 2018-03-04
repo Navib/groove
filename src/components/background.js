@@ -8,7 +8,7 @@ class Background extends Component {
     super(props);
   }
   componentWillMount() {
-
+    
   }
   render() {
     console.log("background: ",this.props);
@@ -17,8 +17,9 @@ class Background extends Component {
         <div>Loading..</div>
       )
     }
-    var divStyle = {
-      backgroundImage: `url(http://image.tmdb.org/t/p/original/${this.props.selectedMovie.backdrop_path})`,
+    const poster = ((this.props.selectedMovie.backdrop_path === null) ? `http://image.tmdb.org/t/p/original/${this.props.selectedMovie.poster_path}` : `http://image.tmdb.org/t/p/original/${this.props.selectedMovie.backdrop_path}`);
+    const divStyle = {
+      backgroundImage: `url(${poster})`,
     };
     return (
       <div className="mv-background" style={divStyle}></div>

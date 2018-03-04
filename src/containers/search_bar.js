@@ -22,7 +22,7 @@ class SearchBar extends Component {
     this.setState({
       term:''
     });
-    this.props.history.push('/')
+    this.props.history.push('/search')
   }
   render() {
     return (

@@ -5,11 +5,13 @@
     width: 100%;
     display: block;
     margin: 0 auto;
-    height: 388px;
+    height: 444px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
 
   .embed-responsive {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    height: 100%;
 
     iframe {}
   }
@@ -24,6 +26,7 @@
     max-height: 450px;
     overflow-y: scroll;
     height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
     .mv-title {}
 

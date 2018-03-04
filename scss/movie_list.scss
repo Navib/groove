@@ -7,17 +7,30 @@
   .movie-row {
     .movie-item {
       height: 240px;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
+      position: relative;
 
       .movie-title {
         font-size: 13px;
+        line-height: 13px;
+        font-weight: 600;
+        position: absolute;
+        bottom: 8px;
+        margin-bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        display: inline-table;
+        width: 130px;
+        text-align: center;
       }
 
       .movie-poster {
         max-width: 100%;
         display: block;
         margin: 0 auto;
-        height: 180px;
+        height: 240px;
+        min-width: 159.7px;
       }
     }
   }
@@ -25,4 +38,27 @@
 
 .movie-container > .row > .col-md-3:nth-child(4n+1) {
   clear: both;
+}
+
+.tooltip-inner {
+  max-width: 300px;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  background-color: #444;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  text-align: left;
+
+  .score {
+    margin-bottom: 0;
+
+    span {
+      background: #8585ff;
+      width: auto;
+      display: inline-block;
+      padding: 4px;
+      margin-bottom: 10px;
+      margin-right: 8px;
+    }
+  }
 }
