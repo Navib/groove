@@ -33,7 +33,7 @@ class MovieList extends Component {
       const language = movie.original_language;
 
       return (
-        <div key={id} className="col-lg-2 col-md-4 col-sm-12 movie-item" data-toggle="tooltip"   data-trigger="hover" title={`<h6>${title}</h6><p class="score"><span>User Score: ${rating}</span><span>${releaseDate.slice(0, releaseDate.indexOf("-"))}</span><span>Language: ${language.toUpperCase()}</span></p><p>${overview}</p>`} data-html="true">
+        <div key={id} className="col-lg-2 col-md-4 col-sm-12 movie-item" data-toggle="tooltip" data-trigger="hover" title={`<h6>${title}</h6><p class="score"><span>User Score: ${rating}</span><span>${releaseDate.slice(0, releaseDate.indexOf("-"))}</span><span>Language: ${language.toUpperCase()}</span></p><p>${overview}</p>`} data-html="true" data-delay="300">
           <Link to={`/movie/${id}`}>
             <img src={poster} className="movie-poster"/>
             <p className="movie-title">{title}</p>
