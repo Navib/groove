@@ -9,6 +9,7 @@ class SearchBar extends Component {
     this.state = {term:''}
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
+    console.log("search: ", this.props);
   }
   onInputChange(event) {
     this.setState({
@@ -21,10 +22,11 @@ class SearchBar extends Component {
     this.setState({
       term:''
     });
+    this.props.history.push('/')
   }
   render() {
     return (
-      <form className="input-group" onSubmit={this.onFormSubmit}>
+      <form className="input-group col-md-6 col-md-offset-3" onSubmit={this.onFormSubmit}>
         <input
           placeholder="Enter A Movie"
           className="form-control search-input"

@@ -5,9 +5,11 @@ import MovieList from './../containers/movie_list';
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <h1>Home!</h1>
-        <SearchBar />
+        <div className="container">
+          <SearchBar history={this.props.history}/>
+        </div>
         <MovieList />
       </div>
     )

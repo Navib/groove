@@ -32,7 +32,7 @@ class ActiveMovie extends Component {
 
     return (
       <div className="mv-info">
-        <h5 className="mv-title">{title}</h5>
+        <h4 className="mv-title">{title}</h4>
         <p className="mv-tagline">{tagline}</p>
         <div className="meta-info">
           <img src={poster} className="movie-poster-single"/>
