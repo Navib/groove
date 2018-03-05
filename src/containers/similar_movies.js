@@ -16,6 +16,8 @@ class SimilarMovies extends Component {
 
   }
   componentDidMount() {
+  }
+  componentDidUpdate() {
     let triggerSim = false;
     $('.launch-similar').on('click', function() {
       triggerSim = !triggerSim;
@@ -27,9 +29,6 @@ class SimilarMovies extends Component {
         $(this).css({bottom:'0'})
       }
     });
-  }
-  componentDidUpdate() {
-
     const swiper = new Swiper('.similar-container', {
       slidesPerView: 6,
       spaceBetween: 17,
@@ -64,6 +63,8 @@ class SimilarMovies extends Component {
   componentWillReceiveProps(nextProps, props) {
     if(nextProps.movieId != this.props.movieId){
       this.props.fetchSimilarMovies(nextProps.movieId)
+      $('.similar-container').removeClass('animated slideInUp').addClass('animated slideOutDown').css({});
+      $('.launch-similar').css({bottom:'0'})
     }
   }
   renderMovies(movieData) {
@@ -94,7 +95,7 @@ class SimilarMovies extends Component {
     if(!this.props.similarMovies) {
       return (<div className="col-md-12">loading</div>)
     }
-    console.log("Render Similiar Movies: ", this.props.similarMovies);
+    //console.log("Render Similiar Movies: ", this.props.similarMovies);
     return (
       <div className="similar-slider-wrapper col-lg-12">
         <h3 className="launch-similar">Similar Movies <i className="fas fa-chevron-right"></i></h3>
