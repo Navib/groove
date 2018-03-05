@@ -1,6 +1,7 @@
 .selected-movie-container {
   position: relative;
-
+  height: 100vh;
+  overflow: hidden;
   .single-movie-poster {
     width: 100%;
     display: block;
@@ -43,7 +44,7 @@
 
       .meta-list {
         list-style-type: none;
-        font-size: calc(13px - 0.0625em);
+        font-size: calc(13px - 0.0425em);
         display: flex;
         height: 100px;
         margin: 0;

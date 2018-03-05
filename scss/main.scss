@@ -8,4 +8,8 @@ body,
 html {
   -webkit-font-smoothing: antialiased;
   font-family: 'Nunito', sans-serif;
+  background: rgba(235, 235, 235, 0.2);
+}
+nav {
+  display: none;
 }
