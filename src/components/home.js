@@ -10,7 +10,6 @@ class Home extends Component {
         <div className="container">
           <SearchBar history={this.props.history}/>
         </div>
-        <MovieList />
       </div>
     )
   }

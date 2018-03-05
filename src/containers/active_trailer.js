@@ -10,6 +10,11 @@ class ActiveTrailer extends Component {
   componentWillMount() {
     this.props.activeTrailer(this.props.movieId)
   }
+  componentWillReceiveProps(nextProps, props) {
+    if(nextProps.movieId != this.props.movieId){
+      this.props.activeTrailer(nextProps.movieId)
+    }
+  }
   render() {
     if(!this.props.selectedTrailer) {
       return <div className="col-md-8">...Loading</div>;

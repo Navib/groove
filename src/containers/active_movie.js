@@ -10,6 +10,11 @@ class ActiveMovie extends Component {
   componentWillMount() {
     this.props.activeMovie(this.props.movieId)
   }
+  componentWillReceiveProps(nextProps, props) {
+    if(nextProps.movieId != this.props.movieId){
+      this.props.activeMovie(nextProps.movieId)
+    }
+  }
   renderInfo(movieData) {
     const title = movieData.title;
     const overview = movieData.overview;
@@ -53,7 +58,7 @@ class ActiveMovie extends Component {
     if(!this.props.selectedMovie) {
       return <div className="col-md-4">...Loading</div>;
     }
-    console.log("render Info: ", this.props);
+    //console.log("render Info: ", this.props);
 
     return (
       <div className="col-md-4">

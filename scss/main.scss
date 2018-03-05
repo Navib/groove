@@ -1,8 +1,11 @@
 @import './movie_list.scss';
 @import './selected_movie.scss';
+@import './similar_movies.scss';
 
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,700');
 body,
 html {
   -webkit-font-smoothing: antialiased;
-  font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
 }

@@ -8,10 +8,10 @@ class Background extends Component {
     super(props);
   }
   componentWillMount() {
-    
+
   }
   render() {
-    console.log("background: ",this.props);
+    //console.log("background: ",this.props);
     if(!this.props.selectedMovie) {
       return (
         <div>Loading..</div>
@@ -29,4 +29,4 @@ class Background extends Component {
 const mapStateToProps = (state) => ({
   selectedMovie: state.activeMovie[0],
 })
-export default connect(mapStateToProps,)(Background);
+export default connect(mapStateToProps)(Background);

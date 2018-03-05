@@ -43,7 +43,7 @@ class MovieList extends Component {
     });
   }
   render() {
-      console.log("movieList: ", this.props);
+    //console.log("movieList: ", this.props);
     return (
       <div className="container movie-container">
         <div className="row movie-row">

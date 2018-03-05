@@ -8,6 +8,7 @@ const ROOT_ACTIVE_URL = `https://api.themoviedb.org/3/movie/`;
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const ACTIVE_MOVIE = 'ACTIVE_MOVIE';
 export const ACTIVE_TRAILER = 'ACTIVE_TRAILER';
+export const FETCH_SIMILAR_MOVIES = 'FETCH_SIMILAR_MOVIES';
 
 export function fetchMovies(movie) {
   const url = `${ROOT_URL}&query=${movie}`;
@@ -53,6 +54,22 @@ export function activeTrailer(movie) {
 
   return {
     type: ACTIVE_TRAILER,
+    payload: request
+  }
+}
+
+export function fetchSimilarMovies(movie) {
+  const url = `${ROOT_ACTIVE_URL}${movie}/similar${ACTIVE_API_KEY}`;
+  const request = axios.get(url).then(response => {
+    //console.log("similar: ",response);
+    return response;
+  }).catch(error => {
+  //  console.log(error);
+    return error;
+  });
+
+  return {
+    type: FETCH_SIMILAR_MOVIES,
     payload: request
   }
 }
