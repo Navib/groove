@@ -39,7 +39,7 @@ class ActiveMovie extends Component {
     return (
       <div className="mv-info">
         <SearchBar class="col-md-12" history={this.props.history}/>
-        <h1 className="mv-title">{title}</h1>
+        <h2 className="mv-title">{title}</h2>
         <p className="mv-tagline">{tagline}</p>
         <div className="meta-info">
           <img src={poster} className="movie-poster-single"/>
