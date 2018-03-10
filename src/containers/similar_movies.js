@@ -23,7 +23,7 @@ class SimilarMovies extends Component {
       triggerSim = !triggerSim;
       if(triggerSim){
         $('.similar-container').removeClass('animated slideOutDown').addClass('animated slideInUp').css({opacity:1,visibility:'visible'});
-        $(this).css({bottom:'11em'})
+        $(this).css({bottom:'18em'})
       }else {
         $('.similar-container').removeClass('animated slideInUp').addClass('animated slideOutDown').css({});
         $(this).css({bottom:'0'})
@@ -31,7 +31,7 @@ class SimilarMovies extends Component {
     });
     const swiper = new Swiper('.similar-container', {
       slidesPerView: 6,
-      spaceBetween: 17,
+      spaceBetween: 27,
       scrollbar: {
         el: '.similar-scrollbar',
         hide: true,
@@ -97,15 +97,17 @@ class SimilarMovies extends Component {
     }
     //console.log("Render Similiar Movies: ", this.props.similarMovies);
     return (
-      <div className="similar-slider-wrapper col-lg-12">
-        <h3 className="launch-similar">Similar Movies <i className="fas fa-chevron-right"></i></h3>
-      <div className="col-md-12 swiper-container similar-container ">
-        <div className="swiper-wrapper similar-wrapper">
-          {this.props.similarMovies.map(this.renderMovies)}
+      <div className="similar-wrap">
+        <a className="launch-similar">Similar Movies <i className="fas fa-chevron-right"></i></a>
+        <div className="similar-slider-wrapper col-lg-12">
+          <div className="col-md-12 swiper-container similar-container ">
+            <div className="swiper-wrapper similar-wrapper">
+              {this.props.similarMovies.map(this.renderMovies)}
+            </div>
+            <div className="swiper-scrollbar similar-scrollbar"></div>
+          </div>
         </div>
-        <div className="swiper-scrollbar similar-scrollbar"></div>
       </div>
-    </div>
     )
   }
 }
