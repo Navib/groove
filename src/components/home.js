@@ -6,9 +6,8 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Home!</h1>
         <div className="container">
-          <SearchBar history={this.props.history}/>
+          <SearchBar history={this.props.history} class="col-md-6 col-md-offset-3"/>
         </div>
       </div>
     )

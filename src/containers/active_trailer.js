@@ -27,7 +27,7 @@ class ActiveTrailer extends Component {
       else {
       const poster = ((this.props.selectedMovie.backdrop_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/original/${this.props.selectedMovie.backdrop_path}`);
         return (
-          <div className="col-md-8">
+          <div className="col-md-8 active-flex">
             <img src={poster} className="single-movie-poster"/>
           </div>
         )
@@ -35,7 +35,7 @@ class ActiveTrailer extends Component {
     }
     //console.log("render Trailer: ", this.props);
     return (
-      <div className="col-md-8">
+      <div className="col-md-8 active-flex">
 
         <div className="embed-responsive embed-responsive-16by9">
         <iframe

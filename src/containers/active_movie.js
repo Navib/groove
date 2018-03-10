@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { activeMovie } from '../actions/index';
+import SearchBar from './search_bar';
 
 class ActiveMovie extends Component {
   constructor(props) {
@@ -32,12 +33,13 @@ class ActiveMovie extends Component {
         <span key={country.name}>{country.iso_3166_1} </span>
       )
     });
-    const poster = ((movieData.poster_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/w92/${movieData.poster_path}`);
+    const poster = ((movieData.poster_path === null) ? 'http://via.placeholder.com/185x278' : `http://image.tmdb.org/t/p/w154/${movieData.poster_path}`);
 
 
     return (
       <div className="mv-info">
-        <h4 className="mv-title">{title}</h4>
+        <SearchBar class="col-md-12" history={this.props.history}/>
+        <h1 className="mv-title">{title}</h1>
         <p className="mv-tagline">{tagline}</p>
         <div className="meta-info">
           <img src={poster} className="movie-poster-single"/>
@@ -61,7 +63,7 @@ class ActiveMovie extends Component {
     //console.log("render Info: ", this.props);
 
     return (
-      <div className="col-md-4">
+      <div className="col-md-4 mv-wrapper">
         {this.renderInfo(this.props.selectedMovie)}
       </div>
     )

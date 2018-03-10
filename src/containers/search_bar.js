@@ -26,7 +26,7 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <form className="input-group col-md-6 col-md-offset-3" onSubmit={this.onFormSubmit}>
+      <form className={`input-group ${this.props.class}`} onSubmit={this.onFormSubmit}>
         <input
           placeholder="Enter A Movie"
           className="form-control search-input"
@@ -34,7 +34,7 @@ class SearchBar extends Component {
           onChange={this.onInputChange}
         />
         <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
+          <button type="submit" className="btn btn-secondary">S</button>
         </span>
       </form>
     )
