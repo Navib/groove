@@ -17,7 +17,7 @@ class NowPlaying extends Component {
   }
   componentDidUpdate() {
     const nowPlayingSwiper = new Swiper('.now-playing-container', {
-      slidesPerView: 6,
+      slidesPerView: 5,
       spaceBetween: 27,
       scrollbar: {
         el: '.now-playing-scrollbar',
@@ -78,6 +78,7 @@ class NowPlaying extends Component {
     console.log(this.props.nowPlaying);
     return (
       <div className="now-playing-slider-wrapper col-lg-12">
+        <h1>In Theatres</h1>
         <div className="col-md-12 swiper-container now-playing-container ">
           <div className="swiper-wrapper now-playing-wrapper">
             {this.props.nowPlaying.map(this.renderMovies)}
