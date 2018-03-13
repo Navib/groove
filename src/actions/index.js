@@ -9,6 +9,7 @@ export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const ACTIVE_MOVIE = 'ACTIVE_MOVIE';
 export const ACTIVE_TRAILER = 'ACTIVE_TRAILER';
 export const FETCH_SIMILAR_MOVIES = 'FETCH_SIMILAR_MOVIES';
+export const FETCH_NOW_PLAYING = 'FETCH_NOW_PLAYING';
 
 export function fetchMovies(movie) {
   const url = `${ROOT_URL}&query=${movie}`;
@@ -70,6 +71,21 @@ export function fetchSimilarMovies(movie) {
 
   return {
     type: FETCH_SIMILAR_MOVIES,
+    payload: request
+  }
+}
+
+export function fetchNowPlaying() {
+  const url = `${ROOT_ACTIVE_URL}now_playing${ACTIVE_API_KEY}`;
+  const request = axios.get(url).then(response => {
+    console.log("now playing action: ", response);
+    return response;
+  }).catch(error => {
+    return error;
+  });
+
+  return {
+    type: FETCH_NOW_PLAYING,
     payload: request
   }
 }
