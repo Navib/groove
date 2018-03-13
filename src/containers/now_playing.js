@@ -23,6 +23,11 @@ class NowPlaying extends Component {
         el: '.now-playing-scrollbar',
         hide: true,
       },
+      navigation: {
+        nextEl: '.now-playing-button-next',
+        prevEl: '.now-playing-button-prev',
+      },
+      preventClicks: false,
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -83,8 +88,9 @@ class NowPlaying extends Component {
           <div className="swiper-wrapper now-playing-wrapper">
             {this.props.nowPlaying.map(this.renderMovies)}
           </div>
-          <div className="swiper-scrollbar now-playing-scrollbar"></div>
         </div>
+        <div className="swiper-button-next now-playing-button-next"><i className="fas fa-angle-right"></i></div>
+        <div className="swiper-button-prev now-playing-button-prev"><i className="fas fa-angle-left"></i></div>
       </div>
     )
   }

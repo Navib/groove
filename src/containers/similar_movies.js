@@ -36,6 +36,7 @@ class SimilarMovies extends Component {
         el: '.similar-scrollbar',
         hide: true,
       },
+      preventClicks:false,
       breakpoints: {
         1024: {
           slidesPerView: 4,
